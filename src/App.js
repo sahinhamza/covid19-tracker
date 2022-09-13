@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Cards } from "./Components/Cards/cards.js";
+import { CountryPicker } from "./Components/CountryPicker/countryPicker.js";
+import { Chart } from "./Components/Chart/chart.js";
+import Footer from "./Components/Footer/footer.js";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <img className={styles.image} src="image.png" alt="COVID-19" />
+      <br />
+      <p>
+        <b>Global and Country Wise Cases of Corona Virus</b>
+      </p>
+      <br />
+      <p>
+        <i>(For a Particular country, select a Country from below)</i>
+      </p>
+      <br />
+      <br />
+      <Cards />
+      <CountryPicker />
+      <Chart />
+      <Footer />
     </div>
+
   );
 }
 
